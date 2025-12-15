@@ -1,7 +1,7 @@
 # A-real-time-cell-image-segmentation-method-based-on-multi-scale-feature-fusion--code
 
 ## 🚀 Project Introduction
-Glial tumor stem cell bright-field microscopic image segmentation plays a critical role in disease mechanism research and anti-tumor drug development, yet existing methods face challenges including multi-scale heterogeneity, unmarked boundary blurring, and model efficiency-precision imbalance. This study proposes the AKB-Yolo model through multidimensional architectural innovations to achieve high-precision real-time segmentation. The model simultaneously optimizes cell boundary localization, confluence calculation, and population counting. First, we establish a pre-processing system based on Contrast Limited Adaptive Histogram Equalization (CLAHE) and adaptive edge filtering to balance noise suppression with local contrast enhancement requirements in biological imaging. Second, we design the Adaptive Kernel Parameterized Convolution module (AKConv), which captures heterogeneous spatial distribution features of glioma stem cells through dynamic kernel deformation mechanisms, enhancing boundary segmentation accuracy while reducing parameter quantity. Third, we construct a Bidirectional Feature Pyramid Network (BiFPN) employing cross-scale feature field calibration strategies to strengthen multi-size cell recognition capabilities. Finally, we propose probability density-guided non-maximum suppression algorithm to reduce cell underdetection. Experimental results demonstrate that the model achieves 95% mAP on our self-constructed glioma stem cell dataset with 38 fps inference speed, simultaneously supporting dual-modality output for cell confluence analysis and high-precision counting, providing reliable automated tools for tumor microenvironment research.
+Cellular dynamic behavior analysis constitutes the fundamental approach to deciphering life activity mechanisms, with its research depth directly determining advancements in critical biomedical domains including tissue regeneration, tumor metastasis intervention, and precision drug evaluation. To address the persistent limitations of conventional microscopic tracking technologies in complex physiological environments, specifically temporal continuity disruption, insufficient multi-scale dynamic feature capture, and inefficient cross-modal data fusion, this study introduces a novel cellular behavior monitoring paradigm integrating spatiotemporal priors and morphological constraints. First, a cross-frame semantic propagation network is developed by fusing temporal microscopic imaging sequences with optical flow motion priors to establish continuous spatiotemporal representations of cellular morphological evolution, resolving topological abruptness from single-frame segmentation. Second, a deformable spatiotemporal interaction module combines dynamic convolutional kernels with gradient-sensitive attention mechanisms to address feature extraction challenges in densely adherent and rapidly deforming cellular populations. Finally, a bidirectional co-optimization architecture embeds trajectory consistency constraints into feature learning through segmentation-tracking mutual reinforcement. Experimental results on glioblastoma stem cell dynamic imaging datasets demonstrate 96.54% trajectory integrity and 93% division detection accuracy, enabling precise quantification of collective migration velocities and directional motility patterns. This framework provides a robust analytical tool for unraveling cellular dynamic behavior mechanisms, driving a paradigm shift in life sciences from static phenotypic observation to dynamic process deconstruction.
 ## 📥 Environment
 ```python
 python==3.8.20 
@@ -11,8 +11,8 @@ pytorch>=2.4.1
 ## 🧩 Installation
 ### Clone repo  
 ```python
-git clone “https://github.com/LCOUD-ALT/A-real-time-cell-image-segmentation-method-based-on-multi-scale-feature-fusion--code.git”  AKB-YOLO
-cd AKB-YOLO
+git clone "https:https://github.com/LCOUD-ALT/Dynamic-Behavior-Monitoring-of-Glioma-Stem-Cells---code.git”  HG+RFA-YOLO
+cd HG+RFA-YOLO
 ```
  
 ### Install dependencies   
@@ -28,12 +28,12 @@ warnings.filterwarnings('ignore')
 from ultralytics import YOLO
 
 if __name__ == '__main__':
-    model = YOLO('AKB-YOLO.yaml')
+    model = YOLO('HG+RFA.yaml')
 
     model.train(data='path/to/your/data.yaml',
                 cache=False,
                 imgsz=640,
-                epochs=150,
+                epochs=200,
                 single_cls=False,  
                 batch=4,
                 close_mosaic=10,
